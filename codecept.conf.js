@@ -6,7 +6,7 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://miattweb.att.com.mx/',
-      show: true
+      headless: true
     }
   },
   include: {
