@@ -22,11 +22,14 @@ jobs:
       - name: Verificar versiones
         run: node -v && npm -v
 
-      - name: Instalar dependencias
+      - name: Instalar dependencias del proyecto
         run: npm ci
 
       - name: Instalar navegadores de Playwright
         run: npx playwright install --with-deps
+
+      - name: Instalar Allure CLI (v2)
+        run: npm install -g allure-commandline@2.20.1
 
       - name: Ejecutar pruebas de CodeceptJS
         run: npx codeceptjs run --steps
@@ -34,14 +37,14 @@ jobs:
       - name: Generar reporte de Allure
         if: always()
         run: |
-          npx allure generate output --clean -o allure-report
+          allure generate output --clean -o allure-report
           ls allure-report
 
       - name: Verificar existencia del reporte de Allure
         if: always()
         run: |
           if [ ! -d "allure-report" ]; then
-            echo " No se generó el directorio allure-report"
+            echo "No se generó el directorio allure-report"
             exit 1
           fi
 
