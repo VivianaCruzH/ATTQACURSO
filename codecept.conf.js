@@ -17,5 +17,12 @@ exports.config = {
     features: './features/*.feature',
     steps: ['./steps/attsteps.js']
   },
-  name: 'Proyecto3'
+  name: 'Proyecto3',
+
+  plugins: {
+    allure: {
+      enabled: true,
+      require: '@codeceptjs/allure-legacy'
+    }
+  }
 }
