@@ -12,17 +12,16 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
-
   gherkin: {
     features: './features/*.feature',
     steps: ['./steps/attsteps.js']
   },
   name: 'Proyecto3',
-
   plugins: {
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy'
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output/allure-results'
     }
   }
-}
+};
