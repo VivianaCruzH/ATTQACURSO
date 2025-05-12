@@ -20,8 +20,8 @@ exports.config = {
   plugins: {
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy',
-      outputDir: './output/allure-results'
+      require: 'allure-codeceptjs',
+      resultsDir: './output/allure-results'
     }
   }
 };

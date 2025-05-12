@@ -34,6 +34,29 @@ jobs:
       - name: Ejecutar pruebas de CodeceptJS
         run: npx codeceptjs run --steps
 
+      - name: Get Allure history
+        uses: actions/checkout@v3
+          if: always()
+          with:
+            ref: gh-pages
+            path: gh-pages
+            token: ${{ secrets.GH_TOKEN }}
+ 
+        - name: Generar reporte de Allure
+          uses: simple-elf/allure-report-action@v1.6
+          if: always()
+          with:
+            allure_results: allure-results
+            allure_history: gh-pages
+            allure_report: allure-history
+ 
+        - name: Deploy report to Github Pages
+          if: always()
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            personal_token: ${{ secrets.GH_TOKEN }}
+            publish_dir: allure-history
+
       - name: Generar reporte de Allure
         if: always()
         run: |
