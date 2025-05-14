@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed May 14 18:24:59 GMT 2025","Wed May 14 18:25:17 GMT 2025","17881","Navegación y gestión de cuenta en AT&T","","","","","Ver mis consumos y descargar PDF",""
+"passed","Wed May 14 18:25:35 GMT 2025","Wed May 14 18:25:49 GMT 2025","13784","Navegación y gestión de cuenta en AT&T","","","","","Cambiar mes en facturas",""
+"passed","Wed May 14 18:24:44 GMT 2025","Wed May 14 18:24:48 GMT 2025","4795","Navegación y gestión de cuenta en AT&T","","","","","Abrir el sitio principal de AT&T",""
+"passed","Wed May 14 18:25:17 GMT 2025","Wed May 14 18:25:35 GMT 2025","18744","Navegación y gestión de cuenta en AT&T","","","","","Ver mis facturas y descargar PDF",""
