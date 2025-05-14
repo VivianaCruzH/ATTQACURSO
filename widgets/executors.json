@@ -1,10 +1,1 @@
-[ {
-  "name" : "GitHub Actions",
-  "type" : "github",
-  "url" : "https://VivianaCruzH.github.io/ATTQACURSO",
-  "buildOrder" : 12,
-  "buildName" : "GitHub Actions Run #15028206687",
-  "buildUrl" : "https://github.com/VivianaCruzH/ATTQACURSO/actions/runs/15028206687",
-  "reportName" : "Allure Report with history",
-  "reportUrl" : "https://VivianaCruzH.github.io/ATTQACURSO/12/"
-} ]
+[ ]

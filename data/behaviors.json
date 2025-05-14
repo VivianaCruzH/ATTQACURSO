@@ -1,57 +1,5 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
-  "children" : [ {
-    "name" : "Abrir el sitio principal de AT&T",
-    "uid" : "89709a3ca6c73e21",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
-    "time" : {
-      "start" : 1747247084103,
-      "stop" : 1747247088898,
-      "duration" : 4795
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Ver mis consumos y descargar PDF",
-    "uid" : "946d38ecfb0965be",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
-    "time" : {
-      "start" : 1747247099357,
-      "stop" : 1747247117238,
-      "duration" : 17881
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Ver mis facturas y descargar PDF",
-    "uid" : "5d92c51292cdb6fe",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
-    "time" : {
-      "start" : 1747247117244,
-      "stop" : 1747247135988,
-      "duration" : 18744
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Cambiar mes en facturas",
-    "uid" : "c0fb0a41fb69379f",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
-    "time" : {
-      "start" : 1747247135994,
-      "stop" : 1747247149778,
-      "duration" : 13784
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ ]
-  } ],
+  "children" : [ ],
   "name" : "behaviors"
 }
