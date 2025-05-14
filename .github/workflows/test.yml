@@ -38,7 +38,7 @@ jobs:
         uses: simple-elf/allure-report-action@v1.6
         if: always()
         with:
-          allure_results: allure-results
+          allure_results: output/allure-results
           allure_history: gh-pages
           allure_report: allure-history
 
