@@ -1,43 +1,38 @@
-name: Ejecutar pruebas de CodeceptJS
-
 on:
   push:
-    branches: [ "**" ]
+    branches: ["**"]
   pull_request:
-    branches: [ "**" ]
+    branches: ["**"]
 
 jobs:
-  test:
+  codecept-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar el repositorio
+      - name: Hacer checkout del repo
         uses: actions/checkout@v3
 
       - name: Instalar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "23.6.1"
 
-      - name: Verificar versiones
-        run: node -v && npm -v
-
-      - name: Instalar dependencias del proyecto
+      - name: Instalar dependencias
         run: npm ci
 
       - name: Instalar navegadores de Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
-      - name: Instalar Allure CLI (v2)
-        run: npm install -g allure-commandline@2.20.1
+      - name: Ejecutar pruebas
+        run: npm run features
 
-      - name: Ejecutar pruebas de CodeceptJS
-        run: npx codeceptjs run --steps
-
-      - name: Verificar o crear historial de Allure
+      - name: Get Allure history
+        uses: actions/checkout@v3
         if: always()
-        run: |
-          mkdir -p gh-pages
+        with:
+          ref: gh-pages
+          path: gh-pages
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Generar reporte de Allure
         uses: simple-elf/allure-report-action@v1.6
@@ -47,30 +42,9 @@ jobs:
           allure_history: gh-pages
           allure_report: allure-history
 
-      - name: Publicar reporte en GitHub Pages
+      - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_TOKEN }}
           publish_dir: allure-history
-
-      - name: Generar reporte de Allure
-        if: always()
-        run: |
-          allure generate output --clean -o allure-report
-          ls allure-report
-
-      - name: Verificar existencia del reporte de Allure
-        if: always()
-        run: |
-          if [ ! -d "allure-history" ]; then
-            echo "No se generó el directorio allure-history"
-            exit 1
-          fi
-
-      - name: Subir reporte de Allure como artefacto
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporte-allure
-          path: allure-history
